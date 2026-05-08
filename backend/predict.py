@@ -200,7 +200,14 @@ def predict_breed(
     top_k = min(top_k, len(class_names))
 
     device = torch.device("cpu")
-    model = _load_model(model_path=model_path, metadata=metadata, device=device)
+    torch.set_num_threads(1)
+    global MODEL  if "MODEL" not in globals():    
+        MODEL = _load_model(         
+            model_path=model_path,         
+            metadata=metadata,         
+            device=device     
+        )  
+        model = MODEL
     preprocess = _build_preprocess(int(metadata["img_size"]))
 
     image = _load_image(source)
@@ -275,7 +282,7 @@ def predict_breed(
         "device": str(device),
         "model_name": metadata.get("model_name"),
     }
-gc.collect()
+# gc.collect()
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Predict cattle breed from image path or URL")
