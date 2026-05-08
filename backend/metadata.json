@@ -1,0 +1,229 @@
+{
+  "model_name": "tf_efficientnetv2_m",
+  "num_classes": 36,
+  "img_size": 384,
+  "class_names": [
+    "Gir",
+    "Sahiwal",
+    "Red_Sindhi",
+    "Tharparkar",
+    "Kankrej",
+    "Ongole",
+    "Hariana",
+    "Rathi",
+    "Hallikar",
+    "Amritmahal",
+    "Khillari",
+    "Kangayam",
+    "Deoni",
+    "Dangi",
+    "Malvi",
+    "Nagori",
+    "Gaolao",
+    "Punganur",
+    "Umblachery",
+    "Vechur",
+    "Bargur",
+    "Siri",
+    "Krishna_Valley",
+    "Bachaur",
+    "Murrah",
+    "Surti",
+    "Mehsana",
+    "Jaffarabadi",
+    "Bhadawari",
+    "Nili_Ravi",
+    "Nagpuri",
+    "Pandharpuri",
+    "Toda",
+    "Banni",
+    "Chilika",
+    "Tarai"
+  ],
+  "class_to_idx": {
+    "Gir": 0,
+    "Sahiwal": 1,
+    "Red_Sindhi": 2,
+    "Tharparkar": 3,
+    "Kankrej": 4,
+    "Ongole": 5,
+    "Hariana": 6,
+    "Rathi": 7,
+    "Hallikar": 8,
+    "Amritmahal": 9,
+    "Khillari": 10,
+    "Kangayam": 11,
+    "Deoni": 12,
+    "Dangi": 13,
+    "Malvi": 14,
+    "Nagori": 15,
+    "Gaolao": 16,
+    "Punganur": 17,
+    "Umblachery": 18,
+    "Vechur": 19,
+    "Bargur": 20,
+    "Siri": 21,
+    "Krishna_Valley": 22,
+    "Bachaur": 23,
+    "Murrah": 24,
+    "Surti": 25,
+    "Mehsana": 26,
+    "Jaffarabadi": 27,
+    "Bhadawari": 28,
+    "Nili_Ravi": 29,
+    "Nagpuri": 30,
+    "Pandharpuri": 31,
+    "Toda": 32,
+    "Banni": 33,
+    "Chilika": 34,
+    "Tarai": 35
+  },
+  "breeds_info": {
+    "Gir": {
+      "type": "cattle",
+      "description": "Prominent forehead dome, long pendulous ears, red/yellow markings"
+    },
+    "Sahiwal": {
+      "type": "cattle",
+      "description": "Reddish-brown, loose skin, docile, high milk yield"
+    },
+    "Red_Sindhi": {
+      "type": "cattle",
+      "description": "Deep red colour, medium size, heat tolerant"
+    },
+    "Tharparkar": {
+      "type": "cattle",
+      "description": "White/grey, medium horns, dual purpose"
+    },
+    "Kankrej": {
+      "type": "cattle",
+      "description": "Silver-grey, lyre-shaped horns, powerful build"
+    },
+    "Ongole": {
+      "type": "cattle",
+      "description": "Massive white body, large hump, strong bull"
+    },
+    "Hariana": {
+      "type": "cattle",
+      "description": "White/light grey, compact body, dual purpose"
+    },
+    "Rathi": {
+      "type": "cattle",
+      "description": "Brown with white patches, good milker"
+    },
+    "Hallikar": {
+      "type": "cattle",
+      "description": "Compact grey body, forward-curving horns, draught breed"
+    },
+    "Amritmahal": {
+      "type": "cattle",
+      "description": "Grey with dark neck, sharp horns, fast draught"
+    },
+    "Khillari": {
+      "type": "cattle",
+      "description": "Compact grey/white, sweeping horns, agile"
+    },
+    "Kangayam": {
+      "type": "cattle",
+      "description": "Grey/white, lyre horns, strong build, Tamil Nadu"
+    },
+    "Deoni": {
+      "type": "cattle",
+      "description": "Black & white spotted, similar to Holstein pattern"
+    },
+    "Dangi": {
+      "type": "cattle",
+      "description": "Red & white or black & white spots, small size"
+    },
+    "Malvi": {
+      "type": "cattle",
+      "description": "Grey, compact, powerful draught cattle"
+    },
+    "Nagori": {
+      "type": "cattle",
+      "description": "Tall, white, long face, good draught"
+    },
+    "Gaolao": {
+      "type": "cattle",
+      "description": "White, medium build, dual purpose"
+    },
+    "Punganur": {
+      "type": "cattle",
+      "description": "World's smallest cattle breed, dwarf, white/grey"
+    },
+    "Umblachery": {
+      "type": "cattle",
+      "description": "Small grey cattle, suited for wet paddy fields"
+    },
+    "Vechur": {
+      "type": "cattle",
+      "description": "Tiny cattle from Kerala, high fat A2 milk"
+    },
+    "Bargur": {
+      "type": "cattle",
+      "description": "Brown with white stripes, hill breed, fast"
+    },
+    "Siri": {
+      "type": "cattle",
+      "description": "Black/brown, Himalayan foothills breed"
+    },
+    "Krishna_Valley": {
+      "type": "cattle",
+      "description": "Massive grey body, heavy draught work"
+    },
+    "Bachaur": {
+      "type": "cattle",
+      "description": "Grey, compact, Bihar and Uttar Pradesh"
+    },
+    "Murrah": {
+      "type": "buffalo",
+      "description": "Tightly coiled horns, jet black, highest milk yield"
+    },
+    "Surti": {
+      "type": "buffalo",
+      "description": "Rusty brown/black, white chevron on neck"
+    },
+    "Mehsana": {
+      "type": "buffalo",
+      "description": "Cross of Murrah & Surti, semi-coiled horns"
+    },
+    "Jaffarabadi": {
+      "type": "buffalo",
+      "description": "Heaviest Indian buffalo, massive horns drooping"
+    },
+    "Bhadawari": {
+      "type": "buffalo",
+      "description": "Copper-toned, highest fat % milk among buffaloes"
+    },
+    "Nili_Ravi": {
+      "type": "buffalo",
+      "description": "Black with white markings on forehead & legs"
+    },
+    "Nagpuri": {
+      "type": "buffalo",
+      "description": "Flat wide backswept horns, black, Vidarbha region"
+    },
+    "Pandharpuri": {
+      "type": "buffalo",
+      "description": "Very long curved horns, tall body, Maharashtra"
+    },
+    "Toda": {
+      "type": "buffalo",
+      "description": "Sacred buffalo of Toda tribe, Nilgiri hills"
+    },
+    "Banni": {
+      "type": "buffalo",
+      "description": "Rann of Kutch breed, medium size, black"
+    },
+    "Chilika": {
+      "type": "buffalo",
+      "description": "Swamp-type buffalo near Chilika Lake, Odisha"
+    },
+    "Tarai": {
+      "type": "buffalo",
+      "description": "Terai foothill region, medium size, dual purpose"
+    }
+  },
+  "top1_accuracy": 0.6097165991902834,
+  "top5_accuracy": 0.8226720647773279
+}

@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.vscode/
+*.h5
+*.pkl
+.DS_Store
+__MACOSX/
+backend/best_model.pth
