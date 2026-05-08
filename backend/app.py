@@ -233,7 +233,15 @@ def index() -> str:
         else:
             error = "Please upload an image or provide an image URL."
 
-    return render_template("index.html", error=error, prediction=prediction, image_source=image_source)
+    if request.method == "POST":
+        return jsonify({
+        "error": error,
+        "prediction": prediction,
+        "image_source": image_source
+    })
+
+    return render_template("index.html",error=error,prediction=prediction,image_source=image_source)
+
 
 
 @app.route("/results")
