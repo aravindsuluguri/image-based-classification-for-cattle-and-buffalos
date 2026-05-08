@@ -27,8 +27,16 @@ import torch.nn as nn
 from PIL import Image, UnidentifiedImageError
 from torchvision import transforms
 
+import os
+import gdown
 
-DEFAULT_MODEL_PATH = Path(__file__).resolve().parent / "best_model.pth"
+MODEL_PATH = Path(__file__).resolve().parent / "best_model.pth"
+
+if not MODEL_PATH.exists():
+    url = "https://drive.google.com/file/d/1ecnLPKhAqnXGprg3A_smy_Il_GE42_Wr/view?usp=drive_link"
+    gdown.download(url, str(MODEL_PATH), quiet=False)
+
+DEFAULT_MODEL_PATH = MODEL_PATH
 DEFAULT_METADATA_PATH = Path(__file__).resolve().parent / "metadata.json"
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
