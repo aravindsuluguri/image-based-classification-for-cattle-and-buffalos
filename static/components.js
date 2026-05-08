@@ -100,7 +100,6 @@ export function DashboardPanel({ prediction, totalScans, recentItems, onTraining
   return html`
     <section className="dashboard card animate-in">
       <header className="dash-header">
-        // <p className="brand"></p>
         <nav>
           <a href="#" onClick=${(e) => { e.preventDefault(); onTrainingResults?.(); }}>Training Results</a>
           <a href="#">History</a>
