@@ -27,6 +27,7 @@ import torch.nn as nn
 from PIL import Image, UnidentifiedImageError
 from torchvision import transforms
 
+import gc
 import os
 import gdown
 
@@ -198,7 +199,7 @@ def predict_breed(
         raise ValueError("top_k must be >= 1")
     top_k = min(top_k, len(class_names))
 
-    device = torch.device("cpu" if use_cpu or not torch.cuda.is_available() else "cuda")
+    device = torch.device("cpu")
     model = _load_model(model_path=model_path, metadata=metadata, device=device)
     preprocess = _build_preprocess(int(metadata["img_size"]))
 
@@ -274,7 +275,7 @@ def predict_breed(
         "device": str(device),
         "model_name": metadata.get("model_name"),
     }
-
+gc.collect()
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Predict cattle breed from image path or URL")
