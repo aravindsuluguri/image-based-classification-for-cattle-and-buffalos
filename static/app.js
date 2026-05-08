@@ -6,9 +6,9 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [previewUrl, setPreviewUrl] = useState("");
-  const [prediction] = useState(initial.prediction || null);
-  const [imageSource] = useState(initial.image_source || "");
-  const [error] = useState(initial.error || "");
+  const [prediction,setPrediction] = useState(initial.prediction || null);
+  const [imageSource,setImageSource] = useState(initial.image_source || "");
+  const [error,setError] = useState(initial.error || "");
   const [isDragging, setIsDragging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
@@ -78,9 +78,44 @@ function App() {
     chooseFile(file);
   };
 
-  const handleSubmit = () => {
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+
     setIsLoading(true);
+    setError("");
+
+  try {
+    const formData = new FormData();
+    if (selectedFile) {
+      formData.append("image_file", selectedFile);
+    }
+
+    if (imageUrl) {
+      formData.append("image_url", imageUrl);
+    }
+
+    const response = await fetch("/", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+      setError(data.error);
+    } else {
+      setPrediction(data.prediction);
+      setImageSource(data.image_source);
+      setCurrentPage("results");
+    }
+
+    } catch (err) {
+      setError("Failed to classify image");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
 
   if (currentPage === "training-results") {
     return html`<main className="shell"><${TrainingResultsPage} /></main>`;
